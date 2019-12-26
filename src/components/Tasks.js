@@ -10,7 +10,7 @@ class Tasks extends Component {
     }
 }
 
-Tasks.prototype = {
-    Task: Proptypes.array.isRequired
+Tasks.propTypes = {
+    tasks: Proptypes.array.isRequired
 }
 export default Tasks;

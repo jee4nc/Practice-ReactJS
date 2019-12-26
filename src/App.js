@@ -5,6 +5,7 @@ import './App.css';
 // ESTOS DATOS SE IMPORTAN EN ESTA LINEA DE CODIGO
 import tasks from './samples/task.json';
 import Tasks from './components/Tasks';
+import TaskForms from './components/TaskForms';
 
 
 
@@ -21,6 +22,8 @@ class App extends React.Component {
   render()
   {
     return <div>
+      <TaskForms/>
+      <br/>
       {/* MEDIANTE EL STATE, SE IMPORTA LOS DATOS tasks
       ESTOS DATOS LOS OCUPAMOS CON LA FUNCION map
       Y HACEMOS UNA FUNCION FLECHA DE JS, PARA QUE CADA ELEMENTO SE CREE EN UN H1 */}

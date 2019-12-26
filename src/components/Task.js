@@ -1,7 +1,7 @@
 
 import React,{ Component } from 'react';
 // ESTE IMPORT PERMITE OCUPAR PropTypes, QUE ES UNA MANERA DE SELECCIONAR EL TIPO DE DATOS QUE SE DAN
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 class Task extends Component {
 
