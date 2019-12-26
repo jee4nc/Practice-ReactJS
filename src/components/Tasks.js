@@ -1,6 +1,7 @@
 // SE IMPORTA LA CLASE REACT DE ESTA MANERA
 import React, { Component} from 'react';
 import Task from './Task'
+import Proptypes from 'prop-types'
 
 class Tasks extends Component {
     render() {
@@ -9,4 +10,7 @@ class Tasks extends Component {
     }
 }
 
+Tasks.prototype = {
+    Task: Proptypes.array.isRequired
+}
 export default Tasks;
