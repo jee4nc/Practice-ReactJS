@@ -18,17 +18,37 @@ class App extends React.Component {
   state = {
     tasks: tasks
   }
-
+  // en este metodo se agrega una nueva funcion, y tiene que recibir un title y descriptoon
   addTask= (title,description) => {
     const newTask = {
       title: title,
       description: description,
-      id: 45
+      id: this.state.tasks.length
     }
     this.setState({
       tasks: [...this.state.tasks, newTask]
     })
   }
+  // FUNCION QUE SIRVE PARA ELIMINAR TAREAS, RECIBE COMO PARAMETRO EL ATRIBUTO ID
+  // FILTER ES EL METODO DE JS PARA FILTRAR MEDIANTE ALGO, EN ESTE CASO EL ID DE LA FUNCION
+  // Y EL ID DE LA TASK
+  deleteTask =  id => {
+    // SE CREA CONSTANTE CON EL RESULTADO DEL FILTRO DE LA FUNCION
+      const NEWTASK = this.state.tasks.filter(task => task.id !== id);
+      // ACA SE CAMBIA EL ESTADO POR LA CONSTANTE ACTUALIZADA
+      this.setState({tasks : NEWTASK})
+  }
+
+    // comentar que hace el metodo checkdone
+  checkDone = id => {
+      const NEWTASKS = this.state.tasks.map(task => {
+        if (task.id === id) {
+          task.done = !task.done
+        }
+        return task;
+      })
+      this.setState({tasks : NEWTASKS})
+    }
   // este metodo mostrara la interfaz en el navegador (render)
   render()
   {
@@ -48,8 +68,8 @@ class App extends React.Component {
     {/* {this.state.tasks.map(e => <p key={e.id}>
       {e.title} - {e.description} - {e.done} - {e.id}
       </p>)} */}
-
-      <Tasks tasks={this.state.tasks}/>
+      {/* aca se le da la propiedad deleteTask a App para que tasks lo reciba como props */}
+      <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} checkDone={this.checkDone}/>
 
       </div>
   }

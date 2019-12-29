@@ -5,7 +5,14 @@ import Proptypes from 'prop-types'
 
 class Tasks extends Component {
     render() {
-        return this.props.tasks.map(task => <Task task={task} key={task.id}/>);
+        return this.props.tasks.map(task => 
+        <Task 
+        task={task} 
+        key={task.id}
+        // ACA SE PASA LA PROPIEDAD DELETETASK Y LE DA EL VALOR DE PROPS PARA QUE SE LO PUEDA PASAR A TASK 
+        deleteTask={this.props.deleteTask}
+        checkDone={this.props.checkDone}
+        />);
         
     }
 }

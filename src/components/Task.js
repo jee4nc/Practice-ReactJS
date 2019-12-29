@@ -24,11 +24,11 @@ class Task extends Component {
             {task.description} - 
             {task.done} - 
             {task.id} 
-            <input type="checkbox" />
+            <input type="checkbox" onChange={this.props.checkDone.bind(this, task.id)}/>
 
             {/* // EN ESTA PaRTE SE LE AGREGA LA PROPIEDAD Style, LA CUAL ESPERA RECIBIR UN OBJETO
             // EN ESTE CASO EN JS , POR ESO SE PONEN DOBLE {{}} */}
-            <button style={btnDelete}>
+            <button style={btnDelete} onClick={this.props.deleteTask.bind(this, task.id)}>
                 x
             </button>
         </div>
