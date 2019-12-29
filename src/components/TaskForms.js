@@ -11,6 +11,7 @@ export default class TaskForms extends Component {
 
     // FUNCION PARA EL EVENTO ENVIAR DEL FORM
     onSubmit = event => {
+        this.props.addTask(this.state.title, this.state.description)
         event.preventDefault();
     }
     // EVENTO PARA CAMBIAR EL INPUT Y TEXT AREA

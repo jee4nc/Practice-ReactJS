@@ -18,11 +18,22 @@ class App extends React.Component {
   state = {
     tasks: tasks
   }
+
+  addTask= (title,description) => {
+    const newTask = {
+      title: title,
+      description: description,
+      id: 45
+    }
+    this.setState({
+      tasks: [...this.state.tasks, newTask]
+    })
+  }
   // este metodo mostrara la interfaz en el navegador (render)
   render()
   {
     return <div>
-      <TaskForms/>
+      <TaskForms addTask={this.addTask}/>
       <br/>
       {/* MEDIANTE EL STATE, SE IMPORTA LOS DATOS tasks
       ESTOS DATOS LOS OCUPAMOS CON LA FUNCION map
